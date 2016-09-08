@@ -29,6 +29,11 @@ public class TekenenPraktijkOpdracht extends Applet {
 
     //tekst
     g.drawString("Lijn",100,25);
-    g.drawString("Rechthoek",300,225);
+    g.drawString("Rechthoek",75,175);
+    g.drawString("Afgeronde Rechthoek",50,325);
+    g.drawString("Gevulde Rechthoek met Ovaal",320,175);
+    g.drawString("Gevulde Ovaal",360,325);
+    g.drawString("Taartpunt met Ovaal eromheen",610,175);
+    g.drawString("Cirkel",685,325);
     }
 }
