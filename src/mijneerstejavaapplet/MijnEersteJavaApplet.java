@@ -25,5 +25,5 @@ public class MijnEersteJavaApplet extends Applet {
 
 }
 
-
+//Opdracht 2.1
 
