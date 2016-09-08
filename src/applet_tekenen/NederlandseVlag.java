@@ -26,6 +26,5 @@ public void init() {
      g.fillRect(80,100,20,1000);
      g.fillRect(75,90,30,10);
 
-
     }
 }
