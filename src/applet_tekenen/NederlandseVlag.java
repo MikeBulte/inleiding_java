@@ -13,6 +13,7 @@ public class NederlandseVlag extends Applet {
 public void init() {
 }
     public void paint (Graphics g){
+        //vlag
         setBackground(Color.black);
         g.setColor(Color.RED);
         g.fillRect(100,100,200,50);
@@ -20,5 +21,11 @@ public void init() {
         g.fillRect(100,150,200,50);
         g.setColor(Color.blue);
         g.fillRect(100,200,200,50);
+    //vlaggenmast
+     g.setColor(Color.lightGray);
+     g.fillRect(80,100,20,1000);
+     g.fillRect(75,90,30,10);
+
+
     }
 }
