@@ -1,4 +1,4 @@
-package mijneerstejavaapplet;
+package applet_tekenen;
 
 /**
  * Created by Mike on 9/7/2016.

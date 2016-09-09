@@ -1,4 +1,4 @@
-package mijneerstejavaapplet;
+package applet_tekenen;
 
 import java.applet.Applet;
 import java.awt.*;
