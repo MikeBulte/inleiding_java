@@ -7,7 +7,7 @@ import java.awt.*;
  * Created by Mike on 9/8/2016.
  */
 
-public class MijnEersteJavaAppletMaarNietEchtHetIsDeTweedeOeps extends Applet {
+public class MijnTweedeJavaApplet extends Applet {
 
 
     //een (lege) methode die de Applet initialiseert
