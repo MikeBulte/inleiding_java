@@ -1,4 +1,4 @@
-package applet_tekenen;
+package inleiding_java.h4tekenen;
 
 /**
  * Created by Mike on 9/8/2016.

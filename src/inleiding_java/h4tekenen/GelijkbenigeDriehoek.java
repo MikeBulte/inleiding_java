@@ -1,4 +1,4 @@
-package applet_tekenen;
+package inleiding_java.h4tekenen;
 
 /**
  * Created by Mike on 9/8/2016.
@@ -17,7 +17,7 @@ public class GelijkbenigeDriehoek extends Applet {
         setBackground(Color.blue);
         g.setColor(Color.yellow);
         g.drawLine(100,200,300,200);
-        g.drawLine(300,200,200,050);
-        g.drawLine(100,200,200,050);
+        g.drawLine(300,200,200,50);
+        g.drawLine(100,200,200,50);
     }
 }
