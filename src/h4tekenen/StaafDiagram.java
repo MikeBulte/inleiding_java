@@ -1,4 +1,4 @@
-package inleiding_java.h4tekenen;
+package h4tekenen;
 
 /**
  * Created by Mike on 9/8/2016.
