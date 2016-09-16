@@ -18,15 +18,13 @@ public class StaafDiagramVariabelen extends Applet {
 
         this.setSize(700, 500);
 
-        int Bodem = 450;
-
         int ValGewicht = 350;
         int JerGewicht = 200;
         int HanGewicht = 250;
 
-        int ValBodem = Bodem - ValGewicht;
-        int JerBodem = Bodem - JerGewicht;
-        int HanBodem = Bodem - HanGewicht;
+        int ValBodem = 450 - ValGewicht;
+        int JerBodem = 450 - JerGewicht;
+        int HanBodem = 450 - HanGewicht;
 
 
         //diagram opbouw
