@@ -8,23 +8,25 @@ import java.awt.*;
  */
 public class StaafDiagramVariabelen extends Applet {
 
-    int ValGewicht;
-    int JerGewicht;
-    int HanGewicht;
-
 
     public void init() {
 
-    ValGewicht = 350;
-    JerGewicht = 150;
-    HanGewicht = 250;
 
     }
 
     public void paint(Graphics g) {
 
+        this.setSize(700, 500);
 
+        int Bodem = 450;
 
+        int ValGewicht = 350;
+        int JerGewicht = 200;
+        int HanGewicht = 250;
+
+        int ValBodem = Bodem - ValGewicht;
+        int JerBodem = Bodem - JerGewicht;
+        int HanBodem = Bodem - HanGewicht;
 
 
         //diagram opbouw
@@ -52,15 +54,15 @@ public class StaafDiagramVariabelen extends Applet {
         g.drawLine(200, 300, 500, 300);
         g.drawLine(200, 350, 500, 350);
         g.drawLine(200, 400, 500, 400);
- /*
-        //kolommen !OUDE CODE!
+
+        //kolommen met variabelen
+
         g.setColor(Color.BLUE);
-        g.fillRect(225, 350, 40, 100);
+        g.fillRect(225, ValGewicht, 40, ValBodem);
         g.setColor(Color.RED);
-        g.fillRect(285, 200, 40, 250);
-        g.setColor(Color.green);
-        g.fillRect(345, 250, 40, 200);
-*/
+        g.fillRect(285, JerGewicht, 40, JerBodem);
+        g.setColor(Color.GREEN);
+        g.fillRect(345, HanGewicht, 40, HanBodem);
 
     }
 }

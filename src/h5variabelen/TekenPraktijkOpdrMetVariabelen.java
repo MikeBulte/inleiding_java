@@ -11,15 +11,11 @@ import java.awt.*;
 public class TekenPraktijkOpdrMetVariabelen extends Applet {
 
 
-    private Color achtergrond;
-    private Color infillkleur;
-    private Color schwarz;
-
-    //Posities, als je dit verandert breekt ALLES
-
     int Positie1;
     int Positie10;
     int Positie15;
+
+    //Posities, als je dit verandert breekt ALLES
     int Positie18;
     int Positie2;
     int Positie25;
@@ -28,18 +24,14 @@ public class TekenPraktijkOpdrMetVariabelen extends Applet {
     int Positie50;
     int Positie6;
     int Positie65;
-
-
     int yTekstpositieLIJN;
     int yTekstpositie1;
     int yTekstpositie2;
-
-    //Hoeken
-
     int taartpStart;
     int taartpArc;
     int rRecthoek;
 
+    //Hoeken
     //Misc
     int tien;
     int vijftien;
@@ -52,7 +44,9 @@ public class TekenPraktijkOpdrMetVariabelen extends Applet {
     int zeventig;
     int tachtig;
     int negentig;
-
+    private Color achtergrond;
+    private Color infillkleur;
+    private Color schwarz;
 
     public void init() {
         //Posities in alfabetische volgorde
