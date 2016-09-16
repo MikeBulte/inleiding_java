@@ -10,11 +10,12 @@ import java.awt.*;
 
 public class TekenPraktijkOpdrMetVariabelen extends Applet {
 
-    Color achtergrond;
-    Color infillkleur;
-    Color schwarz;
 
-    //Posities, als je dit veranderd breekt ALLES
+    private Color achtergrond;
+    private Color infillkleur;
+    private Color schwarz;
+
+    //Posities, als je dit verandert breekt ALLES
 
     int Positie1;
     int Positie10;
@@ -54,19 +55,19 @@ public class TekenPraktijkOpdrMetVariabelen extends Applet {
 
 
     public void init() {
-        //X posities, vergroot met 200 per Eind punt en 300 per losse positie
+        //Posities in alfabetische volgorde
+        Positie1 = 100;
         Positie10 = 10;
         Positie15 = 15;
+        Positie18 = 180;
         Positie2 = 200;
+        Positie25 = 250;
         Positie3 = 300;
         Positie4 = 400;
+        Positie50 = 50;
         Positie6 = 600;
         Positie65 = 650;
-        //Y posities, vergroot met 100 per Eind punt en 150 per losse positie
-        Positie50 = 50;
-        Positie18 = 180;
-        Positie1 = 100;
-        Positie25 = 250;
+
         //Tekst
         yTekstpositieLIJN = 25;
         yTekstpositie1 = 165;
@@ -77,7 +78,7 @@ public class TekenPraktijkOpdrMetVariabelen extends Applet {
         taartpArc = 45;
         rRecthoek = 20;
 
-        //Misc
+        //Kleine getallen om de tekst mee recht te krijgen
         tien = 10;
         vijftien = 15;
         vijftwin = 25;
@@ -118,8 +119,9 @@ public class TekenPraktijkOpdrMetVariabelen extends Applet {
         //Rij 2
 
         g.setColor(infillkleur);
-        /*Taartpunt van Rij !3!*/
-        g.fillArc(Positie6, vijftig, Positie2, Positie1, taartpStart, taartpArc); //!Taartpunt van Rij 3!
+        //Taartpunt van Rij !3!
+        g.fillArc(Positie6, vijftig, Positie2, Positie1, taartpStart, taartpArc);
+        //!Taartpunt van Rij 3!
         g.fillRect(Positie3, vijftig, Positie2, Positie1);
         g.fillOval(Positie3, Positie2, Positie2, Positie1);
         g.setColor(schwarz);
@@ -136,33 +138,5 @@ public class TekenPraktijkOpdrMetVariabelen extends Applet {
         g.drawString("Ovaal met taartpunt omheen", Positie6 + vijftwin, yTekstpositie1);
         g.drawString("Cirkel", Positie65 + vijfder, Positie3 + vijftien);
 
-
-        /* !!OUDE CODE, ALLEEN VOOR REFERENCE!!
-         //mangenta gekleurde objecten
-         g.setColor(infillkleur);
-        g.fillRect(300, 50, 200, 100);
-        g.fillOval(300, 200, 200, 100);
-        g.fillArc(600, 50, 200, 100, 0, 45);
-
-        //outlines
-
-        g.setColor(Color.black);
-        g.drawLine(10, 10, 200, 10);
-        g.drawRect(10, 50, 200, 100);
-        g.drawRoundRect(10, 200, 200, 100, 20, 20);
-        g.drawOval(300, 50, 200, 100);
-        g.drawOval(600, 50, 200, 100);
-        g.drawOval(650, 200, 100, 100);
-
-        //tekst
-
-        g.drawString("Lijn", 100, 25);
-        g.drawString("Rechthoek", 75, 175);
-        g.drawString("Afgeronde Rechthoek", 50, 325);
-        g.drawString("Gevulde Rechthoek met Ovaal", 320, 175);
-        g.drawString("Gevulde Ovaal", 360, 325);
-        g.drawString("Taartpunt met Ovaal eromheen", 610, 175);
-        g.drawString("Cirkel", 685, 325);
-       */
     }
 }
