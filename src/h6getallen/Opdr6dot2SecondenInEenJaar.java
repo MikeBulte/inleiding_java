@@ -29,10 +29,10 @@ public class Opdr6dot2SecondenInEenJaar extends Applet {
 
     public void paint(Graphics g) {
 
-        g.drawString("Een seconde in seconde is:" + Seconde, TekstPosX, 100);
-        g.drawString("Een uur in seconde is:" + Uur, TekstPosX, 150);
-        g.drawString("Een dag in seconde is:" + Dag, TekstPosX, 200);
-        g.drawString("Een jaar in seconde is:" + Jaar, TekstPosX, 250);
+        g.drawString("Een seconde in seconde is: " + Seconde, TekstPosX, 100);
+        g.drawString("Een uur in seconde is: " + Uur, TekstPosX, 150);
+        g.drawString("Een dag in seconde is: " + Dag, TekstPosX, 200);
+        g.drawString("Een jaar in seconde is: " + Jaar, TekstPosX, 250);
 
     }
 }
