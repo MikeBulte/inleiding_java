@@ -27,11 +27,12 @@ public class TekenPraktijkOpdrMetVariabelen extends Applet {
     int yTekstpositieLIJN;
     int yTekstpositie1;
     int yTekstpositie2;
+    //Hoeken
     int taartpStart;
     int taartpArc;
     int rRecthoek;
 
-    //Hoeken
+
     //Misc
     int tien;
     int vijftien;
@@ -84,7 +85,7 @@ public class TekenPraktijkOpdrMetVariabelen extends Applet {
         zeventig = 70;
         tachtig = 80;
         negentig = 90;
-        //kleuren
+        //Kleuren
         achtergrond = new Color(255, 255, 255);
         setBackground(achtergrond);
         infillkleur = new Color(255, 51, 204);
