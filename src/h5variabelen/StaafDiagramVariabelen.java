@@ -9,6 +9,14 @@ import java.awt.*;
 public class StaafDiagramVariabelen extends Applet {
 
 
+    int valgewicht = 350;
+    int jergewicht = 200;
+    int hangewicht = 250;
+
+    int valbodem = 450 - valgewicht;
+    int jerbodem = 450 - jergewicht;
+    int hanbodem = 450 - hangewicht;
+
     public void init() {
 
 
@@ -18,13 +26,6 @@ public class StaafDiagramVariabelen extends Applet {
 
         setSize(700, 500);
 
-        int ValGewicht = 350;
-        int JerGewicht = 200;
-        int HanGewicht = 250;
-
-        int ValBodem = 450 - ValGewicht;
-        int JerBodem = 450 - JerGewicht;
-        int HanBodem = 450 - HanGewicht;
 
 
         //diagram opbouw
@@ -56,11 +57,11 @@ public class StaafDiagramVariabelen extends Applet {
         //kolommen met variabelen
 
         g.setColor(Color.BLUE);
-        g.fillRect(225, ValGewicht, 40, ValBodem);
+        g.fillRect(225, valgewicht, 40, valbodem);
         g.setColor(Color.RED);
-        g.fillRect(285, JerGewicht, 40, JerBodem);
+        g.fillRect(285, jergewicht, 40, jerbodem);
         g.setColor(Color.GREEN);
-        g.fillRect(345, HanGewicht, 40, HanBodem);
+        g.fillRect(345, hangewicht, 40, hanbodem);
 
     }
 }

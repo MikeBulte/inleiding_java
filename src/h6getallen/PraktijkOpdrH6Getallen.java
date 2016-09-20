@@ -8,34 +8,34 @@ import java.awt.*;
  */
 public class PraktijkOpdrH6Getallen extends Applet {
 
-    double Cijfer1;
-    double Cijfer2;
-    double Cijfer3;
-    double Combineerd;
-    double Gemiddelde;
-    double Vermenig;
-    double Verdeeld;
-    int Afkap;
+    double cijfer1;
+    double cijfer2;
+    double cijfer3;
+    double combineerd;
+    double gemiddelde;
+    double vermenig;
+    double verdeeld;
+    int afkap;
 
 
     public void init() {
 
-        Cijfer1 = 5.9;
-        Cijfer2 = 6.3;
-        Cijfer3 = 6.9;
+        cijfer1 = 5.9;
+        cijfer2 = 6.3;
+        cijfer3 = 6.9;
 
-        Combineerd = Cijfer1 + Cijfer2 + Cijfer3;
-        Gemiddelde = Combineerd / 3;
-        Vermenig = Gemiddelde * 10;
-        Afkap = (int) Vermenig;
-        Verdeeld = (double) Afkap / 10;
+        combineerd = cijfer1 + cijfer2 + cijfer3;
+        gemiddelde = combineerd / 3;
+        vermenig = gemiddelde * 10;
+        afkap = (int) vermenig;
+        verdeeld = (double) afkap / 10;
 
     }
 
     public void paint(Graphics g) {
 
-        g.drawString("De Drie cijfers samen zijn: " + Combineerd, 100, 50);
-        g.drawString("Het gemiddelde is: " + Verdeeld, 100, 100);
+        g.drawString("De Drie cijfers samen zijn: " + combineerd, 100, 50);
+        g.drawString("Het gemiddelde is: " + verdeeld, 100, 100);
 
 
     }

@@ -8,21 +8,21 @@ import java.awt.*;
  */
 public class Opdr6dot3TweePos extends Applet {
 
-    int Pos1;
-    int Pos2;
-    int Neg;
+    int pos1;
+    int pos2;
+    int neg;
 
     public void init() {
 
-        Pos1 = 2147483647;
-        Pos2 = 2147483647;
-        Neg = Pos1 + Pos2;
+        pos1 = 2147483647;
+        pos2 = 2147483647;
+        neg = pos1 + pos2;
 
     }
 
     public void paint(Graphics g) {
 
-        g.drawString("Pos1 + Pos 2 is= " + Neg, 100, 100);
+        g.drawString("pos 1 + pos 2 is= " + neg, 100, 100);
 
     }
 }
