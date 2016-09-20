@@ -98,7 +98,7 @@ public class TekenPraktijkOpdrMetVariabelen extends Applet {
         /*
         /Rijen zijn bepaalt op links naar rechts, dus de linker objecten zijn rij 1, midden rij 2, etc.
         */
-        this.setSize(900, 400);
+        setSize(900, 400);
         g.setColor(schwarz);
 
         //Rij 1

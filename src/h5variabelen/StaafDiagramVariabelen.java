@@ -16,7 +16,7 @@ public class StaafDiagramVariabelen extends Applet {
 
     public void paint(Graphics g) {
 
-        this.setSize(700, 500);
+        setSize(700, 500);
 
         int ValGewicht = 350;
         int JerGewicht = 200;
