@@ -5,17 +5,16 @@ import java.awt.*;
 
 /**
  * Created by Mike on 9/18/2016.
+ *
  */
 public class Opdr6dot3TweePos extends Applet {
 
-    int pos1;
-    int pos2;
-    int neg;
+    private int neg;
 
     public void init() {
 
-        pos1 = 2147483647;
-        pos2 = 2147483647;
+        int pos1 = 2147483647;
+        int pos2 = 2147483647;
         neg = pos1 + pos2;
 
     }

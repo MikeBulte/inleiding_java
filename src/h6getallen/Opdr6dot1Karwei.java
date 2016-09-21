@@ -5,13 +5,14 @@ import java.awt.*;
 
 /**
  * Created by Mike on 9/18/2016.
+ *
  */
 public class Opdr6dot1Karwei extends Applet {
 
-    int tekstposx;
-    double totaalbedrag;
-    double bedragpp;
-    double totaalopgetelt;
+    private int tekstposx;
+    private double totaalbedrag;
+    private double bedragpp;
+    private double totaalopgetelt;
 
     public void init() {
 

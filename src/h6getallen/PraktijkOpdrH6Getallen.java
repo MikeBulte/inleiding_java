@@ -5,29 +5,24 @@ import java.awt.*;
 
 /**
  * Created by Mike on 9/18/2016.
+ *
  */
 public class PraktijkOpdrH6Getallen extends Applet {
 
-    double cijfer1;
-    double cijfer2;
-    double cijfer3;
-    double combineerd;
-    double gemiddelde;
-    double vermenig;
-    double verdeeld;
-    int afkap;
+    private double combineerd;
+    private double verdeeld;
 
 
     public void init() {
 
-        cijfer1 = 5.9;
-        cijfer2 = 6.3;
-        cijfer3 = 6.9;
+        double cijfer1 = 5.9;
+        double cijfer2 = 6.3;
+        double cijfer3 = 6.9;
 
         combineerd = cijfer1 + cijfer2 + cijfer3;
-        gemiddelde = combineerd / 3;
-        vermenig = gemiddelde * 10;
-        afkap = (int) vermenig;
+        double gemiddelde = combineerd / 3;
+        double vermenig = gemiddelde * 10;
+        int afkap = (int) vermenig;
         verdeeld = (double) afkap / 10;
 
     }

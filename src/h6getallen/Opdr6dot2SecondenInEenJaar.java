@@ -5,14 +5,15 @@ import java.awt.*;
 
 /**
  * Created by Mike on 9/18/2016.
+ *
  */
 public class Opdr6dot2SecondenInEenJaar extends Applet {
 
-    int tekstposx;
-    int seconde;
-    int uur;
-    int dag;
-    int jaar;
+    private int tekstposx;
+    private int seconde;
+    private int uur;
+    private int dag;
+    private int jaar;
 
 
     public void init() {
