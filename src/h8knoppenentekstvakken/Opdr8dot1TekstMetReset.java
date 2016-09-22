@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 
 /**
  * Created by Mike on 9/20/2016.
- * Dit is tekstvak met 2 knoppen, 1 hiervan print de tekst op de string eronder terwijl de tweede de string en het
+ * Dit is tekstvak met 2 knoppen, een tekstvak en een string. De Ok knop print de tekst op de string eronder terwijl de Reset knop de string en het
  * tekstvak reset.
  */
 public class Opdr8dot1TekstMetReset extends Applet {
