@@ -2,7 +2,8 @@ package h8knoppenentekstvakken;
 
 import java.applet.Applet;
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Created by Mike on 9/20/2016.
