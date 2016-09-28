@@ -44,7 +44,6 @@ public class PraktjkOpdrH8KnoppenEnTekstvakken extends Applet {
         add(minusButton);
         minusButton.addActionListener(new minusButtonListener());
 
-
     }
 
     private class multiplyButtonListener implements ActionListener {
