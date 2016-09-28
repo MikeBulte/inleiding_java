@@ -19,31 +19,56 @@ public class Opdr8dot2OpenAvondBijhouden extends Applet {
     public String vrouwGastenString;
     public String vrouwGastenPotentString;
 
+    int manGastenInt = 0;
+    int manGasten = 0;
+
     public void init() {
 
-        int manGastenInt = 0;
+
         int manGastenPotentInt = 0;
         int vrouwGastenInt = 0;
         int vrouwGastenPotentInt = 0;
 
         Button manGastenKnop = new Button("Voeg toe");
+        add(manGastenKnop);
+        manGastenKnop.addActionListener(new manGastenKnopListener());
+
         Button manGastenPotentKnop = new Button("Voeg toe");
+
+
         Button vrouwGastenKnop = new Button("Voeg toe");
+
+
         Button vrouwGastenPotentKnop = new Button("Voeg toe");
 
-        manGastenString = "Mannen die er zijn: " + manGastenInt;
+
+
+        manGastenString = "Mannen die er zijn: " + manGasten;
         manGastenPotentString = "Mannen die er zijn: " + manGastenPotentInt;
         vrouwGastenString = "Mannen die er zijn: " + vrouwGastenInt;
         vrouwGastenPotentString = "Mannen die er zijn: " + vrouwGastenPotentInt;
 
-        manGastenKnop.addActionListener(new manGastenKnopListener());
 
+
+
+
+
+    }
+
+
+
+    public void paint(Graphics g) {
+
+    g.drawString(manGastenString,50,60);
     }
 
     private class manGastenKnopListener implements ActionListener {
         @Override
-        public void actionPerformed(ActionEvent e) {
+        public void actionPerformed( ActionEvent e ) {
 
+
+
+            repaint();
 
 
 
