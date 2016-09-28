@@ -17,13 +17,15 @@ public class Opdr8dot3BTWBerekener extends Applet {
 
     public void init() {
         tekstvak = new TextField("", 10);
-        Label flairlabel = new Label("Voer een getal in om de BTW te berekenen");
-        Button knop = new Button("Bereken");
-        tekstvak.addActionListener(new TekstvakListener());
-        knop.addActionListener(new TekstvakListener());
-        add(flairlabel);
         add(tekstvak);
+        tekstvak.addActionListener(new TekstvakListener());
+
+        Label flairLabel = new Label("Voer een getal in om de BTW te berekenen");
+        add(flairLabel);
+
+        Button knop = new Button("Bereken");
         add(knop);
+        knop.addActionListener(new TekstvakListener());
 
     }
 
