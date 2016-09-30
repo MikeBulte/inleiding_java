@@ -12,65 +12,90 @@ import java.awt.event.ActionListener;
  */
 public class Opdr8dot2OpenAvondBijhouden extends Applet {
 
-
-
-    public String manGastenString;
-    public String manGastenPotentString;
-    public String vrouwGastenString;
-    public String vrouwGastenPotentString;
-
-    int manGastenInt = 0;
-    int manGasten = 0;
+    private int manGasten = 0;
+    private int manGastenPotent = 0;
+    private int vrouwGasten = 0;
+    private int vrouwGastenPotent = 0;
 
     public void init() {
 
+        setSize(500, 250);
 
-        int manGastenPotentInt = 0;
-        int vrouwGastenInt = 0;
-        int vrouwGastenPotentInt = 0;
-
-        Button manGastenKnop = new Button("Voeg toe");
+        Button manGastenKnop = new Button("Voeg een mannelijke gast toe");
         add(manGastenKnop);
         manGastenKnop.addActionListener(new manGastenKnopListener());
 
-        Button manGastenPotentKnop = new Button("Voeg toe");
+        Button manGastenPotentKnop = new Button("Voeg een potentiele mannelijke gast toe");
+        add(manGastenPotentKnop);
+        manGastenPotentKnop.addActionListener(new manGastenPotentKnopListener());
 
+        Button vrouwGastenKnop = new Button("Voeg een vrouwelijke gast toe");
+        add(vrouwGastenKnop);
+        vrouwGastenKnop.addActionListener(new vrouwGastenKnopListener());
 
-        Button vrouwGastenKnop = new Button("Voeg toe");
-
-
-        Button vrouwGastenPotentKnop = new Button("Voeg toe");
-
-
-
-        manGastenString = "Mannen die er zijn: " + manGasten;
-        manGastenPotentString = "Mannen die er zijn: " + manGastenPotentInt;
-        vrouwGastenString = "Mannen die er zijn: " + vrouwGastenInt;
-        vrouwGastenPotentString = "Mannen die er zijn: " + vrouwGastenPotentInt;
-
-
-
-
-
+        Button vrouwGastenPotentKnop = new Button("Voeg een potentiele vrouwelijke gast toe");
+        add(vrouwGastenPotentKnop);
+        vrouwGastenPotentKnop.addActionListener(new vrouwGastenPotentKnopListener());
 
     }
-
 
 
     public void paint(Graphics g) {
 
-    g.drawString(manGastenString,50,60);
+        String manGastenString = "Mannen die er zijn: " + manGasten;
+        String manGastenPotentString = "Potentieel aantal mannen: " + manGastenPotent;
+        String vrouwGastenString = "Vrouwen die er zijn: " + vrouwGasten;
+        String vrouwGastenPotentString = "Mannen die er zijn: " + vrouwGastenPotent;
+        String totaalGastenString = "Totaal aantal gasten: " + (manGasten + vrouwGasten);
+        String totaalGastenPotentString = "Totaal aantal potentiële gasten: " + (manGastenPotent + vrouwGastenPotent);
+        String totaalGastenCombineerdString = "Alle gasten en potentiële gasten samen: " + (manGasten + manGastenPotent + vrouwGasten + vrouwGastenPotent);
+
+        g.drawString(manGastenString, 50, 100);
+        g.drawString(manGastenPotentString, 50, 120);
+        g.drawString(vrouwGastenString, 250, 100);
+        g.drawString(vrouwGastenPotentString, 230, 120);
+        g.drawString(totaalGastenString, 50, 170);
+        g.drawString(totaalGastenPotentString, 50, 190);
+        g.drawString(totaalGastenCombineerdString, 50, 210);
+
     }
 
     private class manGastenKnopListener implements ActionListener {
         @Override
-        public void actionPerformed( ActionEvent e ) {
+        public void actionPerformed(ActionEvent e) {
 
-
-
+            manGasten = manGasten + 1;
             repaint();
 
+        }
+    }
 
+    private class manGastenPotentKnopListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+
+            manGastenPotent = manGastenPotent + 1;
+            repaint();
+
+        }
+    }
+
+    private class vrouwGastenKnopListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+
+            vrouwGasten = vrouwGasten + 1;
+            repaint();
+
+        }
+    }
+
+    private class vrouwGastenPotentKnopListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+
+            vrouwGastenPotent = vrouwGastenPotent + 1;
+            repaint();
 
         }
     }
