@@ -42,6 +42,11 @@ public class Opdr8dot2OpenAvondBijhouden extends Applet {
 
     public void paint(Graphics g) {
 
+        g.setColor(new Color(218,165,32));
+        g.fillRect(40,80,350,50);
+        g.fillRect(40,150,250,70);
+        g.setColor(Color.black);
+
         String manGastenString = "Mannen die er zijn: " + manGasten;
         String manGastenPotentString = "Potentieel aantal mannen: " + manGastenPotent;
         String vrouwGastenString = "Vrouwen die er zijn: " + vrouwGasten;
@@ -57,6 +62,9 @@ public class Opdr8dot2OpenAvondBijhouden extends Applet {
         g.drawString(totaalGastenString, 50, 170);
         g.drawString(totaalGastenPotentString, 50, 190);
         g.drawString(totaalGastenCombineerdString, 50, 210);
+
+        g.drawRect(40,80,350,50);
+        g.drawRect(40,150,250,70);
 
     }
 
