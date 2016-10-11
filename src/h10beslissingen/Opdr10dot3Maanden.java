@@ -7,11 +7,12 @@ import java.awt.event.ActionListener;
 
 /**
  * Created by Mike on 10/4/2016.
+ * Deze applet kijkt of het ingevoerde nummer van 1 tot 12 een maand is via een switch statement, en daarna laat het de
+ * aantal dagen in de maand zien.
  */
 public class Opdr10dot3Maanden extends Applet {
 
     private TextField tekstveld;
-    private Button knop;
     private String maandString = "";
 
 
@@ -19,12 +20,14 @@ public class Opdr10dot3Maanden extends Applet {
     public void init() {
         super.init();
 
+        setSize(400,300);
+
         Label label = new Label("Voer hier het maandnummer in");
         add(label);
         tekstveld = new TextField("", 5);
         tekstveld.addActionListener(new TekstveldListener());
         add(tekstveld);
-        knop = new Button("Ok");
+        Button knop = new Button("Check de maand");
         knop.addActionListener(new TekstveldListener());
         add(knop);
     }
