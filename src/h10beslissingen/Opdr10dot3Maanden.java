@@ -15,7 +15,6 @@ public class Opdr10dot3Maanden extends Applet {
     private TextField tekstveld;
     private String maandString = "";
 
-
     @Override
     public void init() {
         super.init();

@@ -22,7 +22,6 @@ public class Opdr10dot4Schikkeljaar extends Applet {
     public void init() {
         super.init();
 
-
         setSize(750, 300);
 
         Label label = new Label("Voer hier het maandnummer in");
@@ -52,7 +51,6 @@ public class Opdr10dot4Schikkeljaar extends Applet {
         g.drawString("" + maandString, 50, 100);
         g.drawString("" + jaarTekst, 50, 150);
     }
-
 
     private class SchikkeljaarTekstveldListener implements ActionListener {
         @Override
