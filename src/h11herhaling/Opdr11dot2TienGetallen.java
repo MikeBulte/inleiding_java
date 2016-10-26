@@ -21,7 +21,7 @@ public class Opdr11dot2TienGetallen extends Applet {
         int teller;
         int x = 0;
 
-        for(teller = 20; teller > 10; teller--) {
+        for (teller = 20; teller > 10; teller--) {
             x += 20;
             g.drawString("" + teller, x, 75);
         }
