@@ -7,46 +7,40 @@ import java.awt.event.ActionListener;
 
 /**
  * Created by Mike on 9/28/2016.
+ * Na 1000 jaar werken de staafdiagrammen.
  */
 public class Opdr8UitbreidingStaafDiagram extends Applet {
 
+    private TextField valerieTekstveld = new TextField("40", 7);
+    private TextField jeroenTekstveld = new TextField("100", 7);
+    private TextField hansTekstveld = new TextField("80", 7);
 
-    //Voor iedere 10 KG haal je 25 van het totaal getal AF.
-    int nulKG = 350;
-    int twintigKG = 300;
-    int veertigKG = 250;
-    int zestigKG = 200;
-    int tachigKG = 150;
-    int honderdKG = 100;
-
+    private int beginpuntValerie = 320;
+    private int eindpuntValerie = 160;
+    private int beginpuntJeroen = 80;
+    private int eindpuntJeroen = 400;
+    private int beginpuntHans = 160;
+    private int eindpuntHans = 320;
 
     @Override
     public void init() {
         super.init();
 
-        setSize(700, 400);
-
-        Label jeroenLabel = new Label("Jeroen");
-        add(jeroenLabel);
-        TextField jeroenTextField = new TextField("" + veertigKG);
-        add(jeroenTextField);
-        jeroenTextField.addActionListener(new jeroenTextFieldListener());
-
-        Label valerieLabel = new Label("Valerie");
+        Label valerieLabel = new Label("Valerie:");
         add(valerieLabel);
-        TextField valerieTextField = new TextField("" + veertigKG);
-        add(valerieTextField);
-        valerieTextField.addActionListener(new valerieTextFieldListener());
+        add(valerieTekstveld);
 
-        Label hansLabel = new Label("Hans");
+        Label jeroenLabel = new Label("Jeroen:");
+        add(jeroenLabel);
+        add(jeroenTekstveld);
+
+        Label hansLabel = new Label("Hans:");
         add(hansLabel);
-        TextField hansTextField = new TextField("" + veertigKG);
-        add(hansTextField);
-        hansTextField.addActionListener(new hansTextFieldListener());
+        add(hansTekstveld);
 
-        Button waardesButton = new Button("Wijzig Waardes");
-        add(waardesButton);
-        waardesButton.addActionListener(new waardesButtonListener());
+        Button knop = new Button("Bewerk");
+        add(knop);
+        knop.addActionListener(new KnopActionListener());
 
     }
 
@@ -54,63 +48,67 @@ public class Opdr8UitbreidingStaafDiagram extends Applet {
     public void paint(Graphics g) {
         super.paint(g);
 
+        setSize(1000, 800);
 
+        int bodemTekstPos = 500;
 
-        //diagram opbouw
+        //Tabel Opbouw, kan later nog met variabelen verbeteren
+        //Iedere 80 pixels omhoog is 20 kg op de tabel.
+        //Dit kan door het beginpunt met 40 te verminderen en het eindpunt met 40 te verhogen.
+        g.drawLine(100, 75, 100, 480);
+        g.drawLine(100, 480, 600, 480);
+
+        g.setColor(Color.gray);
+        g.drawLine(100, 80, 550, 80);
+        g.drawLine(100, 160, 550, 160);
+        g.drawLine(100, 240, 550, 240);
+        g.drawLine(100, 320, 550, 320);
+        g.drawLine(100, 400, 550, 400);
+
+        g.drawLine(560, 440, 560, 480);
+
+        //Cijfers en tekst
         g.setColor(Color.black);
-        g.drawLine(200, 100, 200, 350);
-        g.drawLine(200, 350, 500, 350);
+        g.drawString("100 KG", 55, 80);
+        g.drawString("80 KG", 55, 160);
+        g.drawString("60 KG", 55, 240);
+        g.drawString("40 KG", 55, 320);
+        g.drawString("20 KG", 55, 400);
+        g.drawString("0 KG", 55, 480);
 
-        //diagram namen
-        g.drawString("Valerie", 225, 370);
-        g.drawString("Jeroen", 285, 370);
-        g.drawString("Hans", 345, 370);
+        g.drawString("Valerie", 155, bodemTekstPos);
+        g.drawString("Jeroen", 245, bodemTekstPos);
+        g.drawString("Hans", 340, bodemTekstPos);
 
-        //diagram kg cijfers
-        g.drawString("100 KG", 150, 100);
-        g.drawString("80 KG", 150, 150);
-        g.drawString("60 KG", 150, 200);
-        g.drawString("40 KG", 150, 250);
-        g.drawString("20 KG", 150, 300);
-        g.drawString("0 KG", 150, 350);
+        //Tabel balken
 
-        //diagram grijze lijnen
-        g.setColor(Color.lightGray);
-        g.drawLine(200, 100, 500, 100);
-        g.drawLine(200, 150, 500, 150);
-        g.drawLine(200, 200, 500, 200);
-        g.drawLine(200, 250, 500, 250);
-        g.drawLine(200, 300, 500, 300);
+        g.setColor(Color.cyan);
+        g.fillRect(160, beginpuntValerie, 30, eindpuntValerie);
+        g.setColor(Color.orange);
+        g.fillRect(250, beginpuntJeroen, 30, eindpuntJeroen);
+        g.setColor(Color.magenta);
+        g.fillRect(340, beginpuntHans, 30, eindpuntHans);
+
     }
 
-
-    private class jeroenTextFieldListener implements ActionListener {
+    private class KnopActionListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
 
-        }
-    }
+            int valerieKG = Integer.parseInt(valerieTekstveld.getText());
+            int jeroenKG = Integer.parseInt(jeroenTekstveld.getText());
+            int hansKG = Integer.parseInt(hansTekstveld.getText());
 
-    private class valerieTextFieldListener implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
+            beginpuntValerie = 480 - (valerieKG * 4);
+            eindpuntValerie = (valerieKG * 4);
 
-        }
-    }
+            beginpuntJeroen = 480 - (jeroenKG * 4);
+            eindpuntJeroen = (jeroenKG * 4);
 
-    private class hansTextFieldListener implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
+            beginpuntHans = 480 - (hansKG * 4);
+            eindpuntHans = (hansKG * 4);
 
-        }
-    }
-
-    private class waardesButtonListener implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-
+            repaint();
         }
     }
 }
-
-
