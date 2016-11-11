@@ -10,7 +10,7 @@ import java.awt.event.ActionListener;
  * Een simpele en nogal onpraktische rekenmachine maar het doet het, alle knoppen pakken tekstvak 1 en 2 en doen hun
  * respective ding daarna en laten het resultaat achter in het eerste tekstvak.
  */
-public class PraktjkOpdrH8KnoppenEnTekstvakken extends Applet {
+public class PraktijkOpdrH8KnoppenEnTekstvakken extends Applet {
 
     private TextField input1;
     private TextField input2;
