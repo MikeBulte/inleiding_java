@@ -21,32 +21,29 @@ public class Opdr8dot1TekstMetReset extends Applet {
         knop.addActionListener(new KnopListener());
         Button reset = new Button("Reset");
         reset.addActionListener(new ResetListener());
-        Label lab = new Label("Deze tekst reset");
+        Label lab = new Label("Voer in het tekstvak wat in");
         textField = new TextField("", 20);
         add(lab);
         add(textField);
         add(knop);
         add(reset);
-        stri = "hier komt wat je wilt";
-
+        stri = "Klik op OK of op Reset om deze tekst te veranderen";
     }
 
     public void paint(Graphics g) {
-        g.drawString(stri, 60, 60);
+        setSize(440, 300);
+        g.drawString(stri, 15, 60);
 
     }
 
     private class ResetListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            textField.setText(" ");
+            textField.setText("");
             repaint();
-            stri = "Reset";
+            stri = "";
         }
-
-
     }
-
 
     private class KnopListener implements ActionListener {
         @Override
