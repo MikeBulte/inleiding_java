@@ -44,7 +44,7 @@ public class Opdr8dot2OpenAvondBijhouden extends Applet {
 
         g.setColor(new Color(218, 165, 32));
         g.fillRect(40, 80, 350, 50);
-        g.fillRect(40, 150, 250, 70);
+        g.fillRect(40, 150, 250, 50);
         g.setColor(Color.black);
 
         String manGastenString = "Mannen die er zijn: " + manGasten;
@@ -53,7 +53,6 @@ public class Opdr8dot2OpenAvondBijhouden extends Applet {
         String vrouwGastenPotentString = "Mannen die er zijn: " + vrouwGastenPotent;
         String totaalGastenString = "Totaal aantal gasten: " + (manGasten + vrouwGasten);
         String totaalGastenPotentString = "Totaal aantal potentiële gasten: " + (manGastenPotent + vrouwGastenPotent);
-        String totaalGastenCombineerdString = "Alle gasten en potentiële gasten samen: " + (manGasten + manGastenPotent + vrouwGasten + vrouwGastenPotent);
 
         g.drawString(manGastenString, 50, 100);
         g.drawString(manGastenPotentString, 50, 120);
@@ -61,10 +60,9 @@ public class Opdr8dot2OpenAvondBijhouden extends Applet {
         g.drawString(vrouwGastenPotentString, 230, 120);
         g.drawString(totaalGastenString, 50, 170);
         g.drawString(totaalGastenPotentString, 50, 190);
-        g.drawString(totaalGastenCombineerdString, 50, 210);
 
         g.drawRect(40, 80, 350, 50);
-        g.drawRect(40, 150, 250, 70);
+        g.drawRect(40, 150, 250, 50);
 
     }
 
@@ -72,7 +70,8 @@ public class Opdr8dot2OpenAvondBijhouden extends Applet {
         @Override
         public void actionPerformed(ActionEvent e) {
 
-            manGasten = manGasten + 1;
+            manGasten++;
+            manGastenPotent++;
             repaint();
 
         }
@@ -82,7 +81,7 @@ public class Opdr8dot2OpenAvondBijhouden extends Applet {
         @Override
         public void actionPerformed(ActionEvent e) {
 
-            manGastenPotent = manGastenPotent + 1;
+            manGastenPotent++;
             repaint();
 
         }
@@ -92,7 +91,8 @@ public class Opdr8dot2OpenAvondBijhouden extends Applet {
         @Override
         public void actionPerformed(ActionEvent e) {
 
-            vrouwGasten = vrouwGasten + 1;
+            vrouwGasten++;
+            vrouwGastenPotent++;
             repaint();
 
         }
@@ -102,7 +102,7 @@ public class Opdr8dot2OpenAvondBijhouden extends Applet {
         @Override
         public void actionPerformed(ActionEvent e) {
 
-            vrouwGastenPotent = vrouwGastenPotent + 1;
+            vrouwGastenPotent++;
             repaint();
 
         }
