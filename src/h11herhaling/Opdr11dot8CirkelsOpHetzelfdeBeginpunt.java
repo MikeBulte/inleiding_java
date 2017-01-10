@@ -6,6 +6,7 @@ import java.awt.*;
 /**
  * Created by Mike on 11/1/2016.
  * Deze applet maakt heel veel cirkels door een cirkel te tekenen en daarna via een loop de eindpunten van de cirkel iets groter te maken.
+ * Kan mogelijk niet zoals gewilt zijn.
  */
 public class Opdr11dot8CirkelsOpHetzelfdeBeginpunt extends Applet {
 
