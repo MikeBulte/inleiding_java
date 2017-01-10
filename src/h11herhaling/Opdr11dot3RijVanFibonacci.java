@@ -5,7 +5,8 @@ import java.awt.*;
 
 /**
  * Created by Mike on 10/26/2016.
- *
+ * Deze applet telt de rij van Fiobanacci door het tweede getal in een derde integer te plaatsen, waarna getallen 1 en 2
+ * gecombineerd worden en het eerste getal weer de derde integer geworden.
  */
 public class Opdr11dot3RijVanFibonacci extends Applet {
 
