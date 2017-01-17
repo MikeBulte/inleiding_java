@@ -13,7 +13,7 @@ import java.awt.event.ActionListener;
  */
 public class Opdr11PraktijkOpdrDeel2 extends Applet {
 
-    private int tafelGetal = 1;
+    private byte tafelGetal = 1;
 
     @Override
     public void init() {
