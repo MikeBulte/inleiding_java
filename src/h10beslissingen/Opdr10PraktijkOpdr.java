@@ -7,6 +7,8 @@ import java.awt.event.ActionListener;
 
 /**
  * Created by Mike on 1/13/2017.
+ * Deze applet gebruikt meerdere cases per antwoord om veel minder code te schrijven. Misschien ook niet de beste manier
+ * om een switch statement te gebruiken op te string maar waard uit te proberen.
  */
 public class Opdr10PraktijkOpdr extends Applet {
 
