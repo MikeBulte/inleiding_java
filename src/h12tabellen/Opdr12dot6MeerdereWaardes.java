@@ -9,7 +9,7 @@ import java.awt.event.ActionListener;
  * Created by Mike on 2/3/2017.
  * De user kan een Integer getal invoeren in de Textfield om vervolgens met een foreach loop door de hele Array te gaan.
  * Bij iedere getal in de array die overeenkomt met de zoekopdracht gaat er een losse teller met 1 omhoog.
- *
+ * <p>
  * Dit zou misschien efficienter kunnen door de array te sorteren en dan alle getallen af te gaan tot het opgezochte getal gevonden
  * wordt, en dan als het een ander getal daarna vind de zoek opdracht afbreekt.
  */
