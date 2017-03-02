@@ -25,7 +25,6 @@ public class Opdr13dot1AchtergrondKleur extends Applet {
         super.init();
 
         colorButtons();
-
     }
 
     @Override
@@ -34,12 +33,11 @@ public class Opdr13dot1AchtergrondKleur extends Applet {
 
         if (checkBoolean)
             g.drawString("" + resultString, 50, 60);
-
     }
 
     private void colorButtons() {
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < buttonArray.length; i++) {
             switch (i) {
                 case 0: {
                     buttonArray[i] = new Button("Blauw");
