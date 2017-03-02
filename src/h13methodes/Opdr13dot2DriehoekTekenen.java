@@ -31,5 +31,4 @@ public class Opdr13dot2DriehoekTekenen extends Applet {
         g.drawLine(x2, y2, x3, y3);
 
     }
-
 }
