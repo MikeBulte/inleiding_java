@@ -43,14 +43,5 @@ public class Opdr13dot3Muur extends Applet {
                 x = 0;
             }
         }
-
-        /* g.setColor(Color.red);
-        g.fillRect(x1, y1, x2, y2);
-        g.setColor(Color.gray);
-        g.drawRect(x1, y1, x2, y2);
-        x1 += 60;
-        x2 += 60; */
-
     }
-
 }
