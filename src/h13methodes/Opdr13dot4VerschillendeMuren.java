@@ -7,6 +7,8 @@ import java.awt.event.ActionListener;
 
 /**
  * Created by Mike on 09-03-17.
+ * Deze applet bouwt een muur van keuze met 2 loops, een die 10 stukken per regel maakt en een die naar de volgende regel gaat.
+ *
  */
 public class Opdr13dot4VerschillendeMuren extends Applet {
 
@@ -16,6 +18,8 @@ public class Opdr13dot4VerschillendeMuren extends Applet {
     @Override
     public void init() {
         super.init();
+
+        setSize(400, 375);
 
         Button baksteenKnop = new Button("Maak Bakstenen Muur");
         add(baksteenKnop);
@@ -30,11 +34,8 @@ public class Opdr13dot4VerschillendeMuren extends Applet {
     public void paint(Graphics g) {
         super.paint(g);
 
-        setSize(400, 375);
-
         if (checkBoolean)
             tekenMuren(g, x, y, width, height);
-
     }
 
     private void tekenMuren(Graphics g, int x, int y, int width, int height) {
@@ -52,11 +53,29 @@ public class Opdr13dot4VerschillendeMuren extends Applet {
                 } //Einde Bakstenen Loop
                 y += height;
                 if(regel == 0 || regel == 2 || regel == 4 || regel == 6 || regel == 8 || regel == 10 || regel == 12 || regel == 14) {
-                    x = -25;
+                    x = -20;
                 } else {
                     x = 0;
                 }
             } //Einde Regel Loop
+        } else if (betonBlokBoolean) { //Einde If-Statement
+            //Regel loop
+            for (int regel = 0; regel < 15; regel++) {
+                //Aantal Betonblokken per regel
+                for (int betonblokken = 0; betonblokken < 10; betonblokken++) {
+                    g.setColor(Color.lightGray);
+                    g.fill3DRect(x, y, width, height, true);
+                    g.setColor(Color.black);
+                    g.drawRect(x, y, width, height);
+                    x += width;
+                } //Einde Betonblok per regel
+                y+= height;
+                if(regel == 0 || regel == 2 || regel == 4 || regel == 6 || regel == 8 || regel == 10 || regel == 12 || regel == 14) {
+                    x = -30;
+                } else {
+                    x = 0;
+                }
+            }
         }
     }
 
@@ -80,6 +99,10 @@ public class Opdr13dot4VerschillendeMuren extends Applet {
             baksteenBoolean = false;
             betonBlokBoolean = true;
             checkBoolean = true;
+            width = 60;
+            height = 40;
+            x = 0;
+            y = 0;
             repaint();
         }
     }
