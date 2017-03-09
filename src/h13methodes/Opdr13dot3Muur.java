@@ -5,7 +5,7 @@ import java.awt.*;
 
 /**
  * Created by Mike on 02-03-17.
- * Probeer alle Or- Statements te vervangen met een calculatie later.
+ * Deze applet gebruikt een method in de paint method om een bakstenen muur te tekenen met loops.
  */
 public class Opdr13dot3Muur extends Applet {
 
@@ -21,25 +21,25 @@ public class Opdr13dot3Muur extends Applet {
     public void paint(Graphics g) {
         super.paint(g);
 
-        int x = 0, y = 0, width = 100, height = 40;
+        int x = 0, y = 0, width = 40, height = 25;
 
         tekenMuur(g, x, y, width, height);
     }
 
     private void tekenMuur(Graphics g, int x, int y, int width, int height) {
 
-        setBackground(Color.red);
-
-        for (int i = 1; i < 100; i++) {
-            g.setColor(Color.gray);
-            g.drawRect(x, y, width, height);
-            x += 100;
-            if (i == 10 || i == 30 || i == 50 || i == 70 || i == 90) {
-                y += 40;
-                x = -50;
-            }
-            if (i == 20 || i == 40 || i == 60 || i == 80) {
-                y += 40;
+        for (int i = 0; i < 20; i++) {
+            for (int baksteen = 0; baksteen < 20; baksteen++) {
+                g.setColor(Color.lightGray);
+                g.fillRect(x, y, width, height);
+                g.setColor(Color.red);
+                g.fill3DRect((x + 5), (y + 5), (width - 10), (height - 10), true);
+                x += width;
+            } //Einde Bakstenen Loop
+            y += height;
+            if (i == 0 || i == 2 || i == 4 || i == 6 || i == 8 || i == 10 ||  i == 12 ||  i == 14 ||  i == 16 ||  i == 18) {
+                x = -20;
+            } else {
                 x = 0;
             }
         }
