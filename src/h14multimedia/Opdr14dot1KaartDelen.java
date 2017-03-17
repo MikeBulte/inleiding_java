@@ -43,8 +43,8 @@ public class Opdr14dot1KaartDelen extends Applet {
     private class KnopActionListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            kaartKleurString = kaartKleurArray[(int) (Math.random() * (kaartKleurArray.length + 1))];
-            kaartNummerString = kaartNummerArray[(int) (Math.random() * (kaartNummerArray.length + 1))];
+            kaartKleurString = kaartKleurArray[(int) (Math.random() * (kaartKleurArray.length))];
+            kaartNummerString = kaartNummerArray[(int) (Math.random() * (kaartNummerArray.length))];
             repaint();
         }
     }
