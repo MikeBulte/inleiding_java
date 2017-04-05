@@ -13,6 +13,7 @@ import java.net.URL;
 public class Opdr14PraktijkOpdrLucifers extends Applet {
 
     private int luciferAantal;
+    private int playerAantal;
     private String statusString;
     private TextField tekstVeld = new TextField("", 4);
     private Image luciferImage;
@@ -29,6 +30,10 @@ public class Opdr14PraktijkOpdrLucifers extends Applet {
 
         add(tekstVeld);
         tekstVeld.addActionListener(new TekstVeldActionListener());
+
+        Button resetButton = new Button("Reset");
+        add(resetButton);
+        resetButton.addActionListener(new ResetButtonActionListener());
 
         setSize(600, 400);
     }
@@ -56,7 +61,7 @@ public class Opdr14PraktijkOpdrLucifers extends Applet {
     }
 
     private void PlayerTurnUitwerking() {
-        int playerAantal = Integer.parseInt(tekstVeld.getText());
+        playerAantal = Integer.parseInt(tekstVeld.getText());
         if (playerAantal >= 1 && playerAantal <= 3) {
             luciferAantal = luciferAantal - playerAantal;
             statusString = "Er zijn " + luciferAantal + " lucifers over.";
@@ -110,7 +115,18 @@ public class Opdr14PraktijkOpdrLucifers extends Applet {
             if (luciferAantal >= 1) {
                 PlayerTurnUitwerking();
             }
-            ComputerTurnUitwerking();
+            if (playerAantal >= 1 && playerAantal <= 3) {
+                ComputerTurnUitwerking();
+            }
+            repaint();
+        }
+    }
+
+    private class ResetButtonActionListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            luciferAantal = 23;
+            statusString = "Er zijn " + luciferAantal + " lucifers over.";
             repaint();
         }
     }
