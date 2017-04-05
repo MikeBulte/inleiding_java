@@ -8,13 +8,13 @@ import java.net.URL;
 
 /**
  * Created by Mike on 3/23/2017.
- * Deze applet bevat een onwinbaar spel met de computer.
+ * Deze applet bevat een spel waar om de beurt de player en de computer lucifers moeten weghalen.
  */
 public class Opdr14PraktijkOpdrLucifers extends Applet {
 
-    private int luciferAantal;
-    private int playerAantal;
-    private String statusString;
+    private int luciferAantal, playerAantal;
+    private boolean firstTurnBoolean, turnBoolean;
+    private String statusString, turnString, winnerString;
     private TextField tekstVeld = new TextField("", 4);
     private Image luciferImage;
 
@@ -46,6 +46,9 @@ public class Opdr14PraktijkOpdrLucifers extends Applet {
 
         //Tekent de lucifers op scherm
         g.drawString("" + statusString, 300, 325);
+        if (firstTurnBoolean) {
+            g.drawString("" + turnString, 300, 350);
+        }
         for (int i = 0; i < luciferAantal; i++) {
             g.drawImage(luciferImage, x, y, this);
             x += luciferImage.getWidth(this);
@@ -55,26 +58,27 @@ public class Opdr14PraktijkOpdrLucifers extends Applet {
             }
         }
         if (luciferAantal <= 0) {
-            g.drawString("Je hebt verloren!", 300, 350);
+            winningPlayerUitwerking();
+            g.drawString("" + winnerString, 300, 375);
         }
 
     }
 
-    private void PlayerTurnUitwerking() {
+    private void playerTurnUitwerking() {
         playerAantal = Integer.parseInt(tekstVeld.getText());
         if (playerAantal >= 1 && playerAantal <= 3) {
             luciferAantal = luciferAantal - playerAantal;
             statusString = "Er zijn " + luciferAantal + " lucifers over.";
+            turnBoolean = true;
         } else {
             statusString = "Dit is geen geldige invoer!";
         }
     }
 
-    private void ComputerTurnUitwerking() {
-
+    private void computerTurnUitwerking() {
+        int computerAantal = 0;
         //Bepaalt hoeveel lucifers er worden weggehaalt
         if (luciferAantal >= 1) {
-            int computerAantal;
             switch (luciferAantal) {
                 case 2:
                 case 6:
@@ -99,13 +103,23 @@ public class Opdr14PraktijkOpdrLucifers extends Applet {
                     computerAantal = 3;
                     break;
                 default:
-                    computerAantal = 1;
+                    computerAantal = (int) (Math.random() * 3) + 1;
                     break;
             }
             luciferAantal = luciferAantal - computerAantal;
+            firstTurnBoolean = true;
+            turnBoolean = false;
         }
         statusString = "Er zijn " + luciferAantal + " lucifers over.";
+        turnString = "De computer heeft " + computerAantal + " weggehaalt";
+    }
 
+    private void winningPlayerUitwerking() {
+        if (!turnBoolean) {
+            winnerString = "Je hebt gewonnen!";
+        } else {
+            winnerString = "Je hebt verloren!";
+        }
     }
 
     private class TekstVeldActionListener implements ActionListener {
@@ -113,10 +127,10 @@ public class Opdr14PraktijkOpdrLucifers extends Applet {
         public void actionPerformed(ActionEvent e) {
 
             if (luciferAantal >= 1) {
-                PlayerTurnUitwerking();
+                playerTurnUitwerking();
             }
             if (playerAantal >= 1 && playerAantal <= 3) {
-                ComputerTurnUitwerking();
+                computerTurnUitwerking();
             }
             repaint();
         }
@@ -126,6 +140,7 @@ public class Opdr14PraktijkOpdrLucifers extends Applet {
         @Override
         public void actionPerformed(ActionEvent e) {
             luciferAantal = 23;
+            firstTurnBoolean = false;
             statusString = "Er zijn " + luciferAantal + " lucifers over.";
             repaint();
         }
