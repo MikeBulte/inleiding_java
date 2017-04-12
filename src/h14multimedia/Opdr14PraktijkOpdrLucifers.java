@@ -80,25 +80,29 @@ public class Opdr14PraktijkOpdrLucifers extends Applet {
         //Bepaalt hoeveel lucifers er worden weggehaalt
         if (luciferAantal >= 1) {
             switch (luciferAantal) {
+                case 1:
                 case 2:
-                case 6:
-                case 10:
-                case 14:
+                case 9:
+                case 15:
+                case 17:
                 case 18:
                 case 22:
                     computerAantal = 1;
                     break;
                 case 3:
-                case 7:
-                case 11:
-                case 15:
+                case 6:
+                case 8:
+                case 10:
+                case 12:
+                case 14:
+                case 16:
                 case 19:
                     computerAantal = 2;
                     break;
                 case 4:
-                case 8:
-                case 12:
-                case 16:
+                case 7:
+                case 11:
+                case 13:
                 case 20:
                     computerAantal = 3;
                     break;
