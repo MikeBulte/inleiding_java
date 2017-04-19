@@ -13,9 +13,13 @@ import java.util.Random;
 public class Toets2Java extends Applet {
 
     private int creditPlayer = 10;
-    private String creditString;
+    private String winString;
 
-    private boolean playBoolean = false;
+    private boolean firstPlayBoolean = false;
+    private boolean winBoolean = false;
+
+    private Button playButton;
+    private Button creditBuyButton;
 
     private URL url;
     private Image slotImage[] = new Image[3];
@@ -24,11 +28,11 @@ public class Toets2Java extends Applet {
     public void init() {
         super.init();
 
-        Button playButton = new Button("Play");
+        playButton = new Button("Play");
         add(playButton);
         playButton.addActionListener(new PlayButtonActionListener());
 
-        Button creditBuyButton = new Button("Buy Credit");
+        creditBuyButton = new Button("Buy Credit");
         add(creditBuyButton);
         creditBuyButton.addActionListener(new CreditBuyButtonActionListener());
 
@@ -41,7 +45,14 @@ public class Toets2Java extends Applet {
         super.paint(g);
 
         String fruitString;
-        int fruitSlotX = 130;
+        int fruitSlotX = 130; //Controleert ook de plaats van de tekst onder de slots.
+        g.drawString("Credit over: " + creditPlayer, fruitSlotX, 280);
+
+        if (firstPlayBoolean) {
+            if (winBoolean) {
+                g.drawString("" + winString, fruitSlotX, 300);
+            }
+        }
 
         for (int i = 0; i < 3; i++) {
             fruitString = randomFruitSlot();
@@ -49,10 +60,13 @@ public class Toets2Java extends Applet {
             g.drawImage(slotImage[i], fruitSlotX, 100, 70, 165, this);
             fruitSlotX += 70;
         }
-        if (slotImage[0] == slotImage[1] && slotImage[1] == slotImage[2]) {
-            g.drawString("3 slots zijn gelijk", 100, 280);
-        } else if (slotImage[0] == slotImage[1] || slotImage[0] == slotImage[2] || slotImage[1] == slotImage[2]) {
-            g.drawString("2 slots zijn gelijk!", 100, 300);
+
+        if (creditPlayer != 0) {
+            playButton.setEnabled(true);
+            creditBuyButton.setEnabled(false);
+        } else {
+            playButton.setEnabled(false);
+            creditBuyButton.setEnabled(true);
         }
     }
 
@@ -64,16 +78,29 @@ public class Toets2Java extends Applet {
     private class PlayButtonActionListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-
+            firstPlayBoolean = true;
+            creditPlayer--;
+            if (slotImage[0] == slotImage[1] && slotImage[1] == slotImage[2]) {
+                creditPlayer += 20;
+                winBoolean = true;
+                winString = "Je hebt 3 dezelfde, je 20 credit gewonnen";
+            } else if (slotImage[0] == slotImage[1] || slotImage[0] == slotImage[2] || slotImage[1] == slotImage[2]) {
+                creditPlayer += 4;
+                winBoolean = true;
+                winString = "Je hebt 2 dezelfde, je 4 credit gewonnen";
+            } else {
+                winBoolean = false;
+            }
             repaint();
-
         }
     }
 
     private class CreditBuyButtonActionListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-
+            creditPlayer += 10;
+            winBoolean = true;
+            winString = "Je hebt 10 credit gekocht, veel speelplezier!";
         }
     }
 }
