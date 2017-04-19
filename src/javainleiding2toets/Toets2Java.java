@@ -101,6 +101,7 @@ public class Toets2Java extends Applet {
             creditPlayer += 10;
             winBoolean = true;
             winString = "Je hebt 10 credit gekocht, veel speelplezier!";
+            repaint();
         }
     }
 }
