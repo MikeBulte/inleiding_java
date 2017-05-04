@@ -10,7 +10,7 @@ import java.util.Random;
 
 /**
  * Created by Mike on 4/19/2017.
- * Deze applet maakt een speelbare slot machine.
+ * Deze applet maakt een speelbare slot machine. !Zonder de files uit /sound/ komen er errors!
  */
 public class Toets2Java extends Applet {
 
