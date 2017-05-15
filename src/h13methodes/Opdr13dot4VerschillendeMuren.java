@@ -35,6 +35,7 @@ public class Opdr13dot4VerschillendeMuren extends Applet {
         super.paint(g);
 
         if (checkBoolean)
+            setBackground(Color.lightGray);
             tekenMuren(g, x, y, width, height);
     }
 
@@ -45,14 +46,12 @@ public class Opdr13dot4VerschillendeMuren extends Applet {
             for (int regel = 0; regel < 15; regel++) {
                 //Aantal Bakstenen per regel
                 for (int bakstenen = 0; bakstenen < 11; bakstenen++) {
-                    g.setColor(Color.lightGray);
-                    g.fillRect(x, y, width, height);
                     g.setColor(Color.red);
                     g.fill3DRect((x + 5), (y + 5), (width - 10), (height - 10), true);
                     x += width;
                 } //Einde Bakstenen Loop
                 y += height;
-                if(regel == 0 || regel == 2 || regel == 4 || regel == 6 || regel == 8 || regel == 10 || regel == 12 || regel == 14) {
+                if ((regel % 2) == 0) {
                     x = -20;
                 } else {
                     x = 0;
@@ -63,19 +62,17 @@ public class Opdr13dot4VerschillendeMuren extends Applet {
             for (int regel = 0; regel < 15; regel++) {
                 //Aantal Betonblokken per regel
                 for (int betonblokken = 0; betonblokken < 10; betonblokken++) {
-                    g.setColor(Color.lightGray);
-                    g.fill3DRect(x, y, width, height, true);
                     g.setColor(Color.black);
                     g.drawRect(x, y, width, height);
                     x += width;
                 } //Einde Betonblok per regel
                 y+= height;
-                if(regel == 0 || regel == 2 || regel == 4 || regel == 6 || regel == 8 || regel == 10 || regel == 12 || regel == 14) {
+                if ((regel % 2) == 0) {
                     x = -30;
                 } else {
                     x = 0;
                 }
-            }
+            } //Einde Regel Loop
         }
     }
 
@@ -106,10 +103,4 @@ public class Opdr13dot4VerschillendeMuren extends Applet {
             repaint();
         }
     }
-    /*
-     g.setColor(Color.lightGray);
-     g.fillRect(x, y, width, height);
-     g.setColor(Color.red);
-     g.fill3DRect((x + 5), (y + 5), (width - 10), (height - 10), true);
-     */
 }
