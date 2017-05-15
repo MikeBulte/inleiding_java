@@ -29,7 +29,7 @@ public class Opdr13dot3Muur extends Applet {
         for (int i = 0; i < 20; i++) {
             for (int baksteen = 0; baksteen < 20; baksteen++) {
                 g.setColor(Color.red);
-                g.fill3DRect((x + 5), (y + 5), (width - 10), (height - 10), true);
+                g.fill3DRect(x + 5, y + 5, width - 10, height - 10, true);
                 x += width;
             } //Einde Bakstenen Loop
             y += height;

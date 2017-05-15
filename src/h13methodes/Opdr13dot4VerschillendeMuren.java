@@ -47,7 +47,7 @@ public class Opdr13dot4VerschillendeMuren extends Applet {
                 //Aantal Bakstenen per regel
                 for (int bakstenen = 0; bakstenen < 11; bakstenen++) {
                     g.setColor(Color.red);
-                    g.fill3DRect((x + 5), (y + 5), (width - 10), (height - 10), true);
+                    g.fill3DRect(x + 5, y + 5, width - 10, height - 10, true);
                     x += width;
                 } //Einde Bakstenen Loop
                 y += height;
