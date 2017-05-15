@@ -12,9 +12,7 @@ public class Opdr13dot3Muur extends Applet {
     @Override
     public void init() {
         super.init();
-
         setSize(600, 500);
-
     }
 
     @Override
@@ -22,7 +20,7 @@ public class Opdr13dot3Muur extends Applet {
         super.paint(g);
 
         int x = 0, y = 0, width = 40, height = 25;
-
+        setBackground(Color.lightGray);
         tekenMuur(g, x, y, width, height);
     }
 
@@ -30,14 +28,12 @@ public class Opdr13dot3Muur extends Applet {
 
         for (int i = 0; i < 20; i++) {
             for (int baksteen = 0; baksteen < 20; baksteen++) {
-                g.setColor(Color.lightGray);
-                g.fillRect(x, y, width, height);
                 g.setColor(Color.red);
                 g.fill3DRect((x + 5), (y + 5), (width - 10), (height - 10), true);
                 x += width;
             } //Einde Bakstenen Loop
             y += height;
-            if (i == 0 || i == 2 || i == 4 || i == 6 || i == 8 || i == 10 ||  i == 12 ||  i == 14 ||  i == 16 ||  i == 18) {
+            if ((i % 2) == 0) {
                 x = -20;
             } else {
                 x = 0;
