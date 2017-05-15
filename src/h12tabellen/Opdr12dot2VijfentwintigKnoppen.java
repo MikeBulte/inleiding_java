@@ -13,13 +13,11 @@ public class Opdr12dot2VijfentwintigKnoppen extends Applet {
     public void init() {
         super.init();
 
-        //Button knoppenArray[];
-        //knoppenArray = new Button[25];
         Button[] knoppenArray = new Button[25];
 
         for (int teller = 0; teller < knoppenArray.length; teller++) {
-            //Object krijgt een waarde
-            knoppenArray[teller] = new Button("Knop" + teller);
+            //Object krijgt de waarde van de teller
+            knoppenArray[teller] = new Button("Knop " + teller);
             add(knoppenArray[teller]);
         }
     }
@@ -27,7 +25,5 @@ public class Opdr12dot2VijfentwintigKnoppen extends Applet {
     @Override
     public void paint(Graphics g) {
         super.paint(g);
-
-
     }
 }
