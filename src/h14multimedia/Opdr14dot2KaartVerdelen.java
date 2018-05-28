@@ -21,20 +21,15 @@ public class Opdr14dot2KaartVerdelen extends Applet {
     private AudioClip sound;
 
     private String deckArray[];
-
     private String kaartKleurArray[] = {
             "Harten", "Klaver", "Ruiten", "Schoppen"
     };
-
     private String kaartNummerArray[] = {
             "Een", "Twee", "Drie", "Vier", "Vijf", "Zes", "Zeven",
             "Acht", "Negen", "Tien", "Boer", "Vrouw", "Heer"
     };
 
-    private String player1Array[];
-    private String player2Array[];
-    private String player3Array[];
-    private String player4Array[];
+    private String player1Array[], player2Array[], player3Array[], player4Array[];
 
     @Override
     public void init() {

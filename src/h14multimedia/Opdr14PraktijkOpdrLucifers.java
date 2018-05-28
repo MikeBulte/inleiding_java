@@ -12,8 +12,8 @@ import java.net.URL;
  */
 public class Opdr14PraktijkOpdrLucifers extends Applet {
 
-    private int luciferAantal, playerAantal;
     private boolean firstTurnBoolean, turnBoolean;
+    private int luciferAantal, playerAantal;
     private String statusString, turnString, winnerString;
     private TextField tekstVeld = new TextField("", 4);
     private Image luciferImage;
@@ -86,7 +86,7 @@ public class Opdr14PraktijkOpdrLucifers extends Applet {
                 case 15:
                 case 17:
                 case 18:
-                case 22:
+                case 21:
                     computerAantal = 1;
                     break;
                 case 3:
@@ -97,6 +97,7 @@ public class Opdr14PraktijkOpdrLucifers extends Applet {
                 case 14:
                 case 16:
                 case 19:
+                case 22:
                     computerAantal = 2;
                     break;
                 case 4:
@@ -129,7 +130,6 @@ public class Opdr14PraktijkOpdrLucifers extends Applet {
     private class TekstVeldActionListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-
             if (luciferAantal >= 1) {
                 playerTurnUitwerking();
             }

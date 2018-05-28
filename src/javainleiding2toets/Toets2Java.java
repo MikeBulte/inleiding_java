@@ -59,7 +59,7 @@ public class Toets2Java extends Applet {
     @Override
     public void paint(Graphics g) {
 
-        int fruitSlotX = 130; //Controleert ook de plaats van de tekst onder de slots.
+        int fruitSlotX = 130; // Controleert ook de plaats van de tekst onder de slots.
 
         g.drawString("" + winString, fruitSlotX, 300);
         g.drawString("Credit over: " + creditPlayer, fruitSlotX, 280);
@@ -72,6 +72,8 @@ public class Toets2Java extends Applet {
 
     private void randomSlots() {
         for (int i = 0; i < slotIntCurrentArray.length; i++) {
+            // De slots worden random gekozen door eerst een random met NextInt te doen en daarna deze op te slaan in een int,
+            // daarna word dit nummer op de positie van de image array neergezet om een slot te bepalen.
             Random randomNumber = new Random();
             slotIntCurrentArray[i] = randomNumber.nextInt(19) + 1;
             slotCurrentArray[i] = slotArray[slotIntCurrentArray[i]];

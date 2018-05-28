@@ -13,14 +13,12 @@ import java.awt.event.ActionListener;
 public class Opdr12PraktijkOpdrTabellen extends Applet {
 
     private String[] namenStringArray;
-
     private String[] telefoonnummersStringArray;
 
     private TextField namenTextField = new TextField("", 8);
     private TextField telefoonnummersTextField = new TextField("", 12);
 
     private boolean checkBoolean = false;
-
     private int teller = 0;
 
     @Override

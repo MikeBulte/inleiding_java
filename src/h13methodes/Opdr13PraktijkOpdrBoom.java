@@ -24,10 +24,10 @@ public class Opdr13PraktijkOpdrBoom extends Applet {
 
     }
 
-    private void tekenBoom (Graphics g, int xArc, int yArc, int xBoom, int yBoom, int arcWidth, int arcHeight, int boomWidth, int boomHeight) {
+    private void tekenBoom(Graphics g, int xArc, int yArc, int xBoom, int yBoom, int arcWidth, int arcHeight, int boomWidth, int boomHeight) {
         g.setColor(new Color(139, 69, 19));
         g.fillRect(xBoom, yBoom, boomWidth, boomHeight);
-        g.setColor(new Color(0, 100,0));
+        g.setColor(new Color(0, 100, 0));
         g.fillArc(xArc, yArc, arcWidth, arcHeight, 0, 360);
     }
 }

@@ -15,9 +15,7 @@ import java.awt.event.ActionListener;
 public class Opdr13dot1AchtergrondKleur extends Applet {
 
     private Button[] buttonArray = new Button[5];
-
     private String resultString;
-
     private boolean checkBoolean = false;
 
     @Override

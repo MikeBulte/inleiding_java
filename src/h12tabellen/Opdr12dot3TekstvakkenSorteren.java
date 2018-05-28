@@ -13,9 +13,9 @@ import java.util.Arrays;
  */
 public class Opdr12dot3TekstvakkenSorteren extends Applet {
 
-    private TextField tekstvakkenArray[] = new TextField[5];
-    private double[] invoerArray = new double[5];
     private String sorteerString = "";
+    private String[] invoerArray = new String[5];
+    private TextField[] tekstvakkenArray = new TextField[5];
 
     @Override
     public void init() {
@@ -44,7 +44,7 @@ public class Opdr12dot3TekstvakkenSorteren extends Applet {
         public void actionPerformed(ActionEvent e) {
 
             for (int i = 0; i < tekstvakkenArray.length; i++) {
-                invoerArray[i] = Double.parseDouble(tekstvakkenArray[i].getText());
+                invoerArray[i] = tekstvakkenArray[i].getText();
             }
             Arrays.sort(invoerArray);
             sorteerString = "" + Arrays.toString(invoerArray);
